@@ -1,0 +1,24 @@
+<div class="d-flex flex-column align-items-center ">
+    <nav class="col-6 mb-3">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link  font-weight-bold" id="nav-home-tab" 
+            (click)="donestatus=false"
+            [ngClass]="{'active':donestatus==false}"
+            >undone <span >{{unDoneTodos.length}}</span>
+        </a>
+            <a class="nav-item nav-link font-weight-bold" id="nav-profile-tab"
+            (click)="donestatus=true"
+            [ngClass]="{'active':donestatus==true}"
+            >done <span>{{doneTodos.length}}</span>
+            <!-- <span class="badge badge-success">{{doneTodos.length}}</span> -->
+        </a>
+        </div>
+    </nav>
+   <app-todo 
+   *ngFor="let todo of filtertosos()" 
+   [itemTodo]="todo" 
+    class="col-6 mb-2"></app-todo>
+    <!--  (done)="onDone($event)"
+   (delete)="onDelete($event)"
+   (edit)="editHandler($event)" -->
+</div>

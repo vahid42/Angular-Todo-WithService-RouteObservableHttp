@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-between align-items-center border rounded p-3">
+    <div>
+        <!-- <input type="text"  class="from-control" [value]="textTodo"/> -->
+        <input type="text"  class="from-control" [(ngModel)]="todo.content"/>
+
+    </div>
+    <div>
+        <button type="button" class="btn btn-info btn-sm   mx-sm-3" (click)="editHandler()">save</button>
+     </div>
+</div>

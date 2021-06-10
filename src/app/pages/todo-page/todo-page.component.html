@@ -1,0 +1,30 @@
+<p>todo-page by Id </p>
+
+<p>todostatic: {{todostatic}} || todostatic: {{tododynamic}} </p>
+<p>queryparms: {{queryparmsUi}}  || fragmemt: {{fragmemtUI}}</p>
+<br>
+
+<div >
+    <ul>
+    <li>
+        <a routerLink="/todos/10">todo 10</a>
+    </li>
+    <li>
+        <a routerLink="/todos/20" [queryParams]="{name:'vahid',family:'Ghamari'}">todo 20</a>
+    </li>
+    <li>
+        <a routerLink="/todos/30" fragment="loading">todo 30</a>
+    </li>
+    <li>
+        <a routerLink="/todos/40"[queryParams]="{name:'vahid',family:'Ghamari'}" fragment="loading">todo 40</a>
+    </li>
+    <br>
+   
+</ul>
+<ul>
+    <button type="button" class="btn btn-primary m-md-2" (click)="redirctTodos()">Go To Todos </button>
+    <button  type="button" class="btn btn-outline-success m-md-2" (click)="redirctTodosbyId()">Go To Todos by Id </button>
+    <button type="button" class="btn btn-danger" (click)="redirctTodosbyAll()">Go To Todos by All </button>
+</ul>
+
+</div>

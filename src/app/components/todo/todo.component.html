@@ -1,0 +1,17 @@
+<div *ngIf="!editstatus; else edittodoRef" class="d-flex justify-content-between align-items-center border rounded p-3">
+    <div>
+        {{todo.content}}
+    </div>
+    <div>
+        <button type="button" class="btn btn-info btn-sm"
+            [ngClass]="{'btn-success':todo.done,'btn-warning':!todo.done}" (click)="onDone(todo)">{{todo?.done
+            ?'undone':'done'}}</button>
+        <button type="button" class="btn btn-info btn-sm   mx-sm-3" (click)="editstatus=true">edit</button>
+        <button type="button" class="btn btn-danger btn-sm " (click)="onDelete(todo)">delete</button>
+    </div>
+</div>
+<ng-template #edittodoRef>
+    <!-- ارسال    پدر به فرزند با این پوت [todo]="todo" -->
+    <!-- ارسال  فرزند به   پدر با اوت پوت (edit)="editHandler($event)" -->
+    <app-edit-todo [todo]="todo" (edit)="editHandler(todo,$event)"></app-edit-todo>
+</ng-template>
